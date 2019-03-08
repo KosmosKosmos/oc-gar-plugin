@@ -40,7 +40,18 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        Backend\Models\User::extend(function ($model) {
+            $model->morphOne['gar_confirm'] = [
+                'KosmosKosmos\GAR\Models\Confirm',
+                'name' => 'confirmable'
+            ];
+        });
+        Backend\Models\UserRole::extend(function ($model) {
+            $model->morphOne['gar_confirm'] = [
+                'KosmosKosmos\GAR\Models\Confirm',
+                'name' => 'confirmable'
+            ];
+        });
     }
 
     /**
@@ -81,16 +92,23 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'gar' => [
                 'label'       => 'GAR',
-                'url'         => Backend::url('kosmoskosmos/gar/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'url'         => Backend::url('kosmoskosmos/gar/roleinfos'),
+                'icon'        => 'icon-certificate',
                 'permissions' => ['kosmoskosmos.gar.*'],
                 'order'       => 500,
+                'sideMenu'    => [
+                    'role_infos' => [
+                        'label' => 'Role Infos',
+                        'icon' => 'icon-info',
+                        'url' => Backend::url('andosto/eventmanager/roleinfos'),
+                        'permissions' => ['*'],
+                    ],
+                ]
             ],
+
         ];
     }
 }

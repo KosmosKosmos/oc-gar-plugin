@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    role:
+        label: Role
+        type: relation
+        nameFrom: name
+    company:
+        label: Company
+    street:
+        label: Street
+    zip:
+        label: ZIP
+    city:
+        label: City
