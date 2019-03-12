@@ -5,3 +5,6 @@
 1.0.3:
     - Create Confirms tyble
     - create_confirms_table.php
+1.0.4:
+    - Add confirm by role flag RoleInfos Table
+    - add_confirm_by_role_role_infos.php

@@ -18,3 +18,7 @@ columns:
         label: ZIP
     city:
         label: City
+    confirm_by_role:
+        label: Confirm by Role
+        type: switch
+        default: true

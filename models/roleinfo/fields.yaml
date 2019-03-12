@@ -19,3 +19,8 @@ fields:
         label: ZIP
     city:
         label: City
+    confirm_by_role:
+        label: Confirm by Role
+        type: switch
+        default: true
+        comment: 'If on, only first user of the role will have to confirm the GAR'
