@@ -103,12 +103,27 @@ class Plugin extends PluginBase
                     'role_infos' => [
                         'label' => 'Role Infos',
                         'icon' => 'icon-info',
-                        'url' => Backend::url('andosto/eventmanager/roleinfos'),
+                        'url' => Backend::url('kosmoskosmos/gar/roleinfos'),
                         'permissions' => ['*'],
                     ],
                 ]
             ],
 
+        ];
+    }
+
+    public function registerSettings() {
+        return [
+            'gar_settings' => [
+                'label' => 'GAR Settings',
+                'description' => 'GAR contents and settings',
+                'category' => 'GAR',
+                'icon' => 'icon-certificate',
+                'class' => 'KosmosKosmos\GAR\Models\GARSettings',
+                'order' => 500,
+                'keywords' => 'gar confirmation avv',
+                'permissions' => ['*']
+            ]
         ];
     }
 }

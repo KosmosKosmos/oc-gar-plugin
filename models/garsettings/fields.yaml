@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    gar_text:
+        label: GAR Text
+        type: codeeditor
+        size: huge
+        language: html

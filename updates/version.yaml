@@ -8,3 +8,6 @@
 1.0.4:
     - Add confirm by role flag RoleInfos Table
     - add_confirm_by_role_role_infos.php
+1.0.5:
+    - Create GAR Con firmation PDF template
+    - create_gar_pdf.php
