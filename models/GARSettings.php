@@ -1,6 +1,7 @@
 <?php namespace KosmosKosmos\GAR\Models;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Model;
 
 /**
@@ -10,7 +11,8 @@ class GARSettings extends Model
 {
     public $implement = ['System.Behaviors.SettingsModel', 'RainLab.Translate.Behaviors.TranslatableModel'];
     public $translatable = [
-        
+        'gar_confirm_label',
+        'gar_confirm_comment'
     ];
     /**
      * @var string The database table used by the model.
@@ -42,18 +44,4 @@ class GARSettings extends Model
     public $attachOne = [];
     public $attachMany = [];
 
-    public function afterFetch() {
-        if (File::exists(storage_path('kosmoskosmos/gar.html'))) {
-            $this->gar_text = File::get(storage_path('kosmoskosmos/gar.html'));
-        }
-    }
-
-    public function beforeSave() {
-        if (!File::exists(storage_path('kosmoskosmos'))) {
-            File::makeDirectory(storage_path('kosmoskosmos'));
-        }
-
-        File::put(storage_path('kosmoskosmos/gar.html'), $this->gar_text);
-        unset($this->gar_text);
-    }
 }

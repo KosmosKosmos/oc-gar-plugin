@@ -14,5 +14,5 @@ fields:
         language: html
     gar_confirm_label:
         label: GAR Confrim label
-    gar_confrim_comment:
+    gar_confirm_comment:
         label: GAR Confirm comment
