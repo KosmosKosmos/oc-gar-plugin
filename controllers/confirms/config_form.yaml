@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Confirm
+
+# Model Form Field configuration
+form: $/kosmoskosmos/gar/models/confirm/fields.yaml
+
+# Model Class name
+modelClass: KosmosKosmos\GAR\Models\Confirm
+
+# Default redirect location
+defaultRedirect: kosmoskosmos/gar/confirms
+
+# Create page
+create:
+    title: Create Confirm
+    redirect: kosmoskosmos/gar/confirms/update/:id
+    redirectClose: kosmoskosmos/gar/confirms
+
+# Update page
+update:
+    title: Edit Confirm
+    redirect: kosmoskosmos/gar/confirms
+    redirectClose: kosmoskosmos/gar/confirms
+
+# Preview page
+preview:
+    title: Preview Confirm

@@ -20,7 +20,11 @@ class Confirm extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'confirmed',
+        'confirmable_id',
+        'confirmable_type'
+    ];
 
     /**
      * @var array Relations

@@ -1,6 +1,15 @@
 <?php namespace KosmosKosmos\GAR;
 
 use Backend;
+use Backend\Classes\Controller;
+use Backend\Facades\BackendAuth;
+use Flynsarmy\Mfa\Classes\BackendAuthManager;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use KosmosKosmos\GAR\Models\RoleInfo;
 use System\Classes\PluginBase;
 
 /**
@@ -51,6 +60,25 @@ class Plugin extends PluginBase
                 'KosmosKosmos\GAR\Models\Confirm',
                 'name' => 'confirmable'
             ];
+        });
+
+        Event::listen('backend.page.beforeDisplay', function(Controller $controller, $action) {
+            if ( !BackendAuth::check() || in_array($action, $controller->getPublicActions()) )
+                return;
+
+            $user = BackendAuth::getUser();
+            $role = $user->role;
+            $roleInfo = RoleInfo::where('role_id', '=', $role->id)->first();
+            if ($roleInfo) {
+                if (($roleInfo->confirm_by_role && !$role->gar_confirm) ||
+                        (!$roleInfo->confirm_by_role && !$user->gar_confirm)
+                ) {
+                    return Request::ajax()
+                        ? Response::make(trans('backend::lang.page.access_denied.label'), 403)
+                        : Redirect::guest(Backend::url('kosmoskosmos/gar/confirms'));
+
+                }
+            }
         });
     }
 
