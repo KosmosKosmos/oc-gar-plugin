@@ -8,7 +8,10 @@ use Model;
  */
 class GARSettings extends Model
 {
-    public $implement = ['System.Behaviors.SettingsModel'];
+    public $implement = ['System.Behaviors.SettingsModel', 'RainLab.Translate.Behaviors.TranslatableModel'];
+    public $translatable = [
+        
+    ];
     /**
      * @var string The database table used by the model.
      */
