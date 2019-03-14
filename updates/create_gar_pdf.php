@@ -52,7 +52,18 @@ body {
     page-break-after: always;
 }';
 
-   protected $templateHtml = '{{gar| raw}}';
+   protected $templateHtml = '<p>'.PHP_EOL.
+'{{firstname}} {{lastname}}<br>'.PHP_EOL.
+'{{roleInfo.company}}<br>'.PHP_EOL.
+'{{roleInfo.street}}<br>'.PHP_EOL.
+'{{roleInfo.zip}} {{roleInfo.city}}<br>'.PHP_EOL.
+'</p>'.PHP_EOL.PHP_EOL.
+'{{gar| raw}}'.PHP_EOL.PHP_EOL.
+'<p>Dieses Dokument wurde online beim Login auf {{url}} als gelesen und akzeptiert markiert.</p>'.PHP_EOL.
+'<p>IP: {{ip}}<br>'.PHP_EOL.
+'Datum & Uhrzeit: {{date}}<br>'.PHP_EOL.
+'Signiert mit der Name: {{firstname_signed}} {{lastname_signed}}'.PHP_EOL.
+'</p>';
 
    public function run() {
        $layout = Layout::where('code', '=', 'clear')->first();

@@ -11,6 +11,6 @@
 1.0.5:
     - Create GAR Con firmation PDF template
     - create_gar_pdf.php
-#1.0.6:
- #   - Create GAR HtML file
-  #  - create_gar_file.php
+1.0.6:
+    - Create GAR HTML file
+    - create_gar_file.php

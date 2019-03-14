@@ -16,3 +16,6 @@ fields:
         label: GAR Confrim label
     gar_confirm_comment:
         label: GAR Confirm comment
+    export:
+        type: partial
+        path: ~/plugins/kosmoskosmos/gar/models/garsettings/_export.htm
