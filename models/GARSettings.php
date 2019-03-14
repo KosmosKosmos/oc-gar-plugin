@@ -1,6 +1,7 @@
 <?php namespace KosmosKosmos\GAR\Models;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 use Model;
 
@@ -44,4 +45,19 @@ class GARSettings extends Model
     public $attachOne = [];
     public $attachMany = [];
 
+    public function beforeSave() {
+        if (!File::exists(storage_path('kosmoskosmos'))) {
+            File::makeDirectory(storage_path('kosmoskosmos'));
+        }
+
+        File::put(storage_path('kosmoskosmos/gar.html'), Input::all()['GARSettings']['gar_text']);
+        unset(Input::all()['GARSettings']['gar_text']);
+    }
+
+    public function afterFetch() {
+        if (File::exists(storage_path('kosmoskosmos/gar.html'))) {
+            $this->gat_text = File::get(storage_path('kosmoskosmos/gar.html'));
+        }
+
+    }
 }
