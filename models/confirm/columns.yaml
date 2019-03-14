@@ -6,3 +6,14 @@ columns:
     id:
         label: ID
         searchable: true
+        clickable: false
+    confirmable:
+        type: partial
+        path: ~/plugins/kosmoskosmos/gar/models/confirm/_confirmable.htm
+        label: kosmoskosmos.gar::lang.confirms.confirmable
+        clickable: false
+    created_at:
+        label: kosmoskosmos.gar::lang.confirms.confirmed_at
+        type: datetime
+        clickable: false
+

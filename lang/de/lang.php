@@ -26,5 +26,10 @@
             'city' => 'City',
             'confirm_by_role' => 'Confirm by Role',
             'confirm_by_role_comment' => 'If on, only first user of the role will have to confirm the GAR'
+        ],
+        'confirms' => [
+            'confirms' => 'Confirms',
+            'confirmable' => 'Confirmable',
+            'confirmed_at' => 'Confirmed At'
         ]
     ];

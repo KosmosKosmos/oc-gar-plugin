@@ -75,7 +75,7 @@ class Plugin extends PluginBase
                 ) {
                     return Request::ajax()
                         ? Response::make(trans('backend::lang.page.access_denied.label'), 403)
-                        : Redirect::guest(Backend::url('kosmoskosmos/gar/confirms'));
+                        : Redirect::guest(Backend::url('kosmoskosmos/gar/confirms/confirm'));
 
                 }
             }
@@ -130,6 +130,12 @@ class Plugin extends PluginBase
                         'label' => 'kosmoskosmos.gar::lang.role_infos.role_infos',
                         'icon' => 'icon-info',
                         'url' => Backend::url('kosmoskosmos/gar/roleinfos'),
+                        'permissions' => ['kosmoskosmos.gar.manage_gar'],
+                    ],
+                    'confirms' => [
+                        'label' => 'kosmoskosmos.gar::lang.confirms.confirms',
+                        'icon' => 'icon-check',
+                        'url' => Backend::url('kosmoskosmos/gar/confirms'),
                         'permissions' => ['kosmoskosmos.gar.manage_gar'],
                     ],
                 ]

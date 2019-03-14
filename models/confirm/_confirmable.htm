@@ -1,0 +1,5 @@
+<?php if($record->confirmable_type == 'Backend\Models\UserRole'):?>
+    <?=$record->confirmable->name?>
+<?php else: ?>
+    <?=$record->confirmable->login?>
+<?php endif; ?>

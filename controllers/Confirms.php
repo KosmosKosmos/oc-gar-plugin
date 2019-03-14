@@ -30,15 +30,18 @@ class Confirms extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    protected $publicActions = ['index'];
+    protected $publicActions = ['confirm'];
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->layout = 'auth';
+        BackendMenu::setContext('KosmosKosmos.GAR', 'gar', 'confirms');
     }
 
+    public function confirm () {
+        $this->layout = 'auth';
+    }
     public function onConfirm() {
         $data = input();
         if (!array_key_exists('confirmed', $data) || in_array($data['confirmed'], [false, 'false', 0, '0'], true)) {

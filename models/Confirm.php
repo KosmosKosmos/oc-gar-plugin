@@ -34,7 +34,7 @@ class Confirm extends Model
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [
-        'imageable' => []
+        'confirmable' => []
     ];
     public $morphOne = [];
     public $morphMany = [];
