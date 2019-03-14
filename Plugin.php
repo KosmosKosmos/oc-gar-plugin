@@ -103,12 +103,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'kosmoskosmos.gar.some_permission' => [
+            'kosmoskosmos.gar.manage_gar' => [
                 'tab' => 'GAR',
-                'label' => 'Some permission'
+                'label' => 'Manage GAR'
             ],
         ];
     }
@@ -122,17 +120,17 @@ class Plugin extends PluginBase
     {
         return [
             'gar' => [
-                'label'       => 'GAR',
+                'label'       => 'kosmoskosmos.gar::lang.gar',
                 'url'         => Backend::url('kosmoskosmos/gar/roleinfos'),
                 'icon'        => 'icon-certificate',
-                'permissions' => ['kosmoskosmos.gar.*'],
+                'permissions' => ['kosmoskosmos.gar.manage_gar'],
                 'order'       => 500,
                 'sideMenu'    => [
                     'role_infos' => [
-                        'label' => 'Role Infos',
+                        'label' => 'kosmoskosmos.gar::lang.role_infos.role_infos',
                         'icon' => 'icon-info',
                         'url' => Backend::url('kosmoskosmos/gar/roleinfos'),
-                        'permissions' => ['*'],
+                        'permissions' => ['kosmoskosmos.gar.manage_gar'],
                     ],
                 ]
             ],
@@ -143,14 +141,14 @@ class Plugin extends PluginBase
     public function registerSettings() {
         return [
             'gar_settings' => [
-                'label' => 'GAR Settings',
-                'description' => 'GAR contents and settings',
+                'label' => 'kosmoskosmos.gar::lang.settings.gar_settings',
+                'description' => 'kosmoskosmos.gar::lang.settings.comment',
                 'category' => 'GAR',
                 'icon' => 'icon-certificate',
                 'class' => 'KosmosKosmos\GAR\Models\GARSettings',
                 'order' => 500,
-                'keywords' => 'gar confirmation avv',
-                'permissions' => ['*']
+                'keywords' => 'gar confirmation avv bestätigung bestaetigung',
+                'permissions' => ['kosmoskosmos.gar.manage_gar']
             ]
         ];
     }

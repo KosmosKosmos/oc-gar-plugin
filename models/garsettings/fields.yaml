@@ -8,14 +8,14 @@ fields:
         disabled: true
         hidden: true
     gar_text:
-        label: GAR Text
+        label: kosmoskosmos.gar::lang.settings.gar_text
         type: codeeditor
         size: huge
         language: html
     gar_confirm_label:
-        label: GAR Confrim label
+        label: kosmoskosmos.gar::lang.settings.gar_confirm_label
     gar_confirm_comment:
-        label: GAR Confirm comment
+        label: kosmoskosmos.gar::lang.settings.gar_confirm_comment
     export:
         type: partial
         path: ~/plugins/kosmoskosmos/gar/models/garsettings/_export.htm

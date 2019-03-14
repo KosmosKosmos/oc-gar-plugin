@@ -8,11 +8,11 @@
 </div>
 <br>
 <div class="form-group span-left is-required">
-    <label style="color: white;">First name</label>
+    <label style="color: white;"><?=e(trans('kosmoskosmos.gar::lang.form.firstname'))?></label>
     <input type="text" name="firstname" id="firstname" class="form-control" required>
 </div>
 <div class="form-group span-right is-required">
-    <label style="color: white;">Last name</label>
+    <label style="color: white;"><?=e(trans('kosmoskosmos.gar::lang.form.lastname'))?></label>
     <input type="text" name="lastname" id="lastname" class="form-control" required>
 </div>
 <br><br>
@@ -34,6 +34,6 @@
             data-request="onConfirm"
             data-stripe-load-indicator
     >
-        Continue
+        <?=e(trans('kosmoskosmos.gar::lang.form.continue'))?>
     </button>
 </div>

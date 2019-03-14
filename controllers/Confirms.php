@@ -42,13 +42,12 @@ class Confirms extends Controller
     public function onConfirm() {
         $data = input();
         if (!array_key_exists('confirmed', $data) || in_array($data['confirmed'], [false, 'false', 0, '0'], true)) {
-            Flash::error('Please confirm');
+            Flash::error(trans('kosmoskosmos.gar::lang.form.please_confirm'));
         } else if (!array_key_exists('firstname', $data) || $data['firstname'] == '') {
-            Flash::error('First name is required');
+            Flash::error(trans('kosmoskosmos.gar::lang.form.firstname_required'));
         } else if (!array_key_exists('lastname', $data) || $data['lastname'] == '') {
-            Flash::error('Last name is required');
-        }
-        if (in_array($data['confirmed'], [true, 'true', 1, '1'], true)) {
+            Flash::error(trans('kosmoskosmos.gar::lang.form.lastname_required'));
+        } else if (in_array($data['confirmed'], [true, 'true', 1, '1'], true)) {
             $user = BackendAuth::getUser();
             $role = $user->role;
             $roleInfo = RoleInfo::where('role_id', '=', $role->id)->first();

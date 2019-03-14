@@ -7,18 +7,18 @@ columns:
         label: ID
         searchable: true
     role:
-        label: Role
+        label: kosmoskosmos.gar::lang.role_infos.role
         relation: role
         select: name
     company:
-        label: Company
+        label: kosmoskosmos.gar::lang.role_infos.company
     street:
-        label: Street
+        label: kosmoskosmos.gar::lang.role_infos.street
     zip:
-        label: ZIP
+        label: kosmoskosmos.gar::lang.role_infos.zip
     city:
-        label: City
+        label: kosmoskosmos.gar::lang.role_infos.city
     confirm_by_role:
-        label: Confirm by Role
+        label: kosmoskosmos.gar::lang.role_infos.confirm_by_role
         type: switch
         default: true
