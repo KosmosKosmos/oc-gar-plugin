@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Chumper\Zipper\Facades\Zipper;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\URL;
 use KosmosKosmos\GAR\Models\Confirm;
@@ -84,6 +85,14 @@ class Confirms extends Controller
                          'lastname_signed' => $data['lastname']
                         ]
                 )->save(storage_path('kosmoskosmos/signed/'.$filename));
+
+                Mail::queue('kosmoskosmos.gar::mail.gar', [], function ($message) use ($user, $filename) {
+                    $message->to('info@andosto.com');
+                    if (filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+                        $message->cc($user->email);
+                    }
+                    $message->attach(storage_path('kosmoskosmos/signed/'.$filename), ['as' => 'confirmation.pdf', 'mime' => 'application/pdf']);
+                });
 
                 return redirect(Backend::url('backend'));
             }

@@ -1,4 +1,4 @@
-<?php namespace Andosto\EventManager\Updates;
+<?php namespace KosmosKosmos\GAR\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;

@@ -1,4 +1,4 @@
-<?php namespace Andosto\EventManager\Updates;
+<?php namespace KosmosKosmos\GAR\Updates;
 
 use Illuminate\Support\Facades\File;
 use October\Rain\Database\Updates\Seeder;
