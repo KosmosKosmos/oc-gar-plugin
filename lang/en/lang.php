@@ -7,7 +7,6 @@
              'gar_text' => 'GAR Text',
              'gar_confirm_label' => 'GAR Confirm Label',
              'gar_confirm_comment' => 'GAR Confirm Comment',
-             'export' => 'Export'
          ],
          'form' => [
             'firstname' => 'First Name',
@@ -30,6 +29,7 @@
          'confirms' => [
              'confirms' => 'Confirms',
              'confirmable' => 'Confirmable',
-             'confirmed_at' => 'Confirmed At'
+             'confirmed_at' => 'Confirmed At',
+             'export' => 'Export GAR Confirmations'
          ]
      ];

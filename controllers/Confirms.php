@@ -90,12 +90,22 @@ class Confirms extends Controller
         }
     }
 
-    public function export() {
-        $files = glob(storage_path('kosmoskosmos/signed/*'));
-        $filename = 'gar-'.Carbon::today()->format('Y-m-d').'.zip';
-        Zipper::make(storage_path('kosmoskosmos/'.$filename))->add($files)->close();
+    public function onExport() {
+        $filename = 'signed-'.Carbon::today()->format('Y-m-d').'.zip';
+        $password = str_random(6);
 
-        return response()->download(storage_path('kosmoskosmos/'.$filename))->deleteFileAfterSend(true);
+        exec('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.storage_path('kosmoskosmos/signed/*'));
+        if (!File::exists(storage_path('kosmoskosmos/'.$filename))) {
+            throw new \Exception('Cannot create zip file');
+        }
+
+        return ['file' => $filename, 'password' => $password];
+    }
+
+    public function download($file) {
+        if (File::exists(storage_path('kosmoskosmos/'.$file))) {
+            return response()->download(storage_path('kosmoskosmos/'.$file))->deleteFileAfterSend(true);
+        }
     }
 
 }
