@@ -23,7 +23,8 @@ class Confirm extends Model
     protected $fillable = [
         'confirmed',
         'confirmable_id',
-        'confirmable_type'
+        'confirmable_type',
+        'file'
     ];
 
     /**

@@ -17,3 +17,6 @@
 1.0.7:
     - Create Conirmation Mail
     - create_gar_mail_template.php
+1.0.8:
+    - Add Filename
+    - add_file_confirms.php

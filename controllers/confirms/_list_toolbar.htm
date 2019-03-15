@@ -1,4 +1,7 @@
 <a
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
         data-request="onExport"
         data-stripe-load-indicator
         class="btn btn-primary oc-icon-download"

@@ -56,12 +56,6 @@ class Confirms extends Controller
             $role = $user->role;
             $roleInfo = RoleInfo::where('role_id', '=', $role->id)->first();
             if ($roleInfo) {
-                Confirm::create([
-                    'confirmed' => true,
-                    'confirmable_id' => $roleInfo->confirm_by_role ? $role->id : $user->id,
-                    'confirmable_type' => $roleInfo->confirm_by_role ? get_class($role) : get_class($user),
-                ]);
-
                 if (!File::exists(storage_path('kosmoskosmos'))) {
                     File::makeDirectory(storage_path('kosmoskosmos'));
                 }
@@ -86,6 +80,13 @@ class Confirms extends Controller
                         ]
                 )->save(storage_path('kosmoskosmos/signed/'.$filename));
 
+                Confirm::create([
+                        'confirmed' => true,
+                        'confirmable_id' => $roleInfo->confirm_by_role ? $role->id : $user->id,
+                        'confirmable_type' => $roleInfo->confirm_by_role ? get_class($role) : get_class($user),
+                        'file' => $filename
+                ]);
+
                 Mail::queue('kosmoskosmos.gar::mail.gar', [], function ($message) use ($user, $filename) {
                     $message->to('info@andosto.com');
                     if (filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
@@ -100,10 +101,23 @@ class Confirms extends Controller
     }
 
     public function onExport() {
+        $data = input();
+
         $filename = 'signed-'.Carbon::today()->format('Y-m-d').'.zip';
         $password = str_random(6);
 
-        exec('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.storage_path('kosmoskosmos/signed/*'));
+        if (array_key_exists('checked', $data)) {
+            $files = Confirm::whereIn('id', $data['checked'])->get()->lists('file');
+            $files = array_map(function ($a) {
+                return storage_path('kosmoskosmos/signed/'.$a);
+                },
+            $files);
+            $files = implode(' ', $files);
+        } else {
+            $files = storage_path('kosmoskosmos/signed/*');
+        }
+        Log::info('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.$files);
+        exec('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.$files);
         if (!File::exists(storage_path('kosmoskosmos/'.$filename))) {
             throw new \Exception('Cannot create zip file');
         }
