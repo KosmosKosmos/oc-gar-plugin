@@ -7,6 +7,7 @@
             'gar_text' => 'GAR Text',
             'gar_confirm_label' => 'GAR Confirm Label',
             'gar_confirm_comment' => 'GAR Confirm Comment',
+            'gar_cc_mail' => 'GAR CC Mail'
         ],
         'form' => [
             'firstname' => 'First Name',

@@ -87,14 +87,16 @@ class Confirms extends Controller
                         'file' => $filename
                 ]);
 
-                Mail::queue('kosmoskosmos.gar::mail.gar', [], function ($message) use ($user, $filename) {
-                    $message->to('info@andosto.com');
-                    if (filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
-                        $message->cc($user->email);
-                    }
-                    $message->attach(storage_path('kosmoskosmos/signed/'.$filename), ['as' => 'confirmation.pdf', 'mime' => 'application/pdf']);
-                });
+                if (filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+                    Mail::queue('kosmoskosmos.gar::mail.gar', [], function ($message) use ($user, $filename) {
+                        $message->to($user->email);
 
+                        if (GARSettings::get('gar_cc_mail') && filter_var(GARSettings::get('gar_cc_mail'), FILTER_VALIDATE_EMAIL)) {
+                            $message->cc(GARSettings::get('gar_cc_mail'));
+                        }
+                        $message->attach(storage_path('kosmoskosmos/signed/'.$filename), ['as' => 'confirmation.pdf', 'mime' => 'application/pdf']);
+                    });
+                }
                 return redirect(Backend::url('backend'));
             }
         }

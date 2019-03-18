@@ -16,3 +16,5 @@ fields:
         label: kosmoskosmos.gar::lang.settings.gar_confirm_label
     gar_confirm_comment:
         label: kosmoskosmos.gar::lang.settings.gar_confirm_comment
+    gar_cc_mail:
+        label: kosmoskosmos.gar::lang.settings.gar_cc_mail
