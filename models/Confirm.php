@@ -1,5 +1,6 @@
 <?php namespace KosmosKosmos\GAR\Models;
 
+use Illuminate\Support\Facades\File;
 use Model;
 
 /**
@@ -41,4 +42,10 @@ class Confirm extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public function beforeDelete() {
+        if (File::exists(storage_path('kosmoskosmos/signed/'.$this->file))) {
+            File::delete(storage_path('kosmoskosmos/signed/'.$this->file));
+        }
+    }
 }
