@@ -18,8 +18,8 @@
 <br><br>
 <div class="form-group checkboxlist-field span-left is-required">
     <div class="checkbox custom-checkbox">
-        <input id="accept_gar" name="accept_gar" value="1" type="checkbox">
-        <label class="choice" for="accept_gar" style="color: white;"><?=\KosmosKosmos\GAR\Models\GARSettings::get('gar_confirm_label', 'I accept GAR.')?></label>
+        <input id="accept-gar" name="accept_gar" value="1" type="checkbox">
+        <label class="choice" for="accept-gar" style="color: white;"><?=\KosmosKosmos\GAR\Models\GARSettings::get('gar_confirm_label', 'I accept GAR.')?></label>
         <p class="help-block" style="color: white;"><?=\KosmosKosmos\GAR\Models\GARSettings::get('gar_confirm_comment', 'By checking this you are confirming that you accept the GAR.')?></p>
     </div>
 </div>
@@ -27,7 +27,7 @@
     <button type="button"
             class="btn btn-primary"
             onclick="$(this).data('request-data', {
-                confirmed: $('#accept_gar').is(':checked'),
+                confirmed: $('#accept-gar').is(':checked'),
                 firstname: $('#firstname').val(),
                 lastname: $('#lastname').val()
             })"
