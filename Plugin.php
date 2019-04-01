@@ -28,7 +28,7 @@ class Plugin extends PluginBase
             'name'        => 'GAR',
             'description' => 'No description provided yet...',
             'author'      => 'KosmosKosmos',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'icon-certificate'
         ];
     }
 
@@ -70,8 +70,8 @@ class Plugin extends PluginBase
             $role = $user->role;
             $roleInfo = RoleInfo::where('role_id', '=', $role->id)->first();
             if ($roleInfo) {
-                if (($roleInfo->confirm_by_role && !$role->gar_confirm) ||
-                        (!$roleInfo->confirm_by_role && !$user->gar_confirm)
+                if (($roleInfo->is_confirmed_by_role && !$role->gar_confirm) ||
+                        (!$roleInfo->is_confirmed_by_role && !$user->gar_confirm)
                 ) {
                     return Request::ajax()
                         ? Response::make(trans('backend::lang.page.access_denied.label'), 403)

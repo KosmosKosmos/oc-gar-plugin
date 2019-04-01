@@ -22,7 +22,7 @@ class Confirm extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'confirmed',
+        'is_confirmed',
         'confirmable_id',
         'confirmable_type',
         'file'

@@ -64,7 +64,7 @@ class Confirms extends Controller
                     File::makeDirectory(storage_path('kosmoskosmos/signed'));
                 }
 
-                $filename = 'signed_'.($roleInfo->confirm_by_role ? 'role_'.$role->id : 'user_'.$user->id).'.pdf';
+                $filename = 'signed_'.($roleInfo->is_confirmed_by_role ? 'role_'.$role->id : 'user_'.$user->id).'.pdf';
                 $gar = GARSettings::get('gar_text');
 
                 PDF::loadTemplate('gar-confirm',
@@ -81,9 +81,9 @@ class Confirms extends Controller
                 )->save(storage_path('kosmoskosmos/signed/'.$filename));
 
                 Confirm::create([
-                        'confirmed' => true,
-                        'confirmable_id' => $roleInfo->confirm_by_role ? $role->id : $user->id,
-                        'confirmable_type' => $roleInfo->confirm_by_role ? get_class($role) : get_class($user),
+                        'is_confirmed' => true,
+                        'confirmable_id' => $roleInfo->is_confirmed_by_role ? $role->id : $user->id,
+                        'confirmable_type' => $roleInfo->is_confirmed_by_role ? get_class($role) : get_class($user),
                         'file' => $filename
                 ]);
 
@@ -118,7 +118,7 @@ class Confirms extends Controller
         } else {
             $files = storage_path('kosmoskosmos/signed/*');
         }
-        Log::info('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.$files);
+
         exec('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.$files);
         if (!File::exists(storage_path('kosmoskosmos/'.$filename))) {
             throw new \Exception('Cannot create zip file');

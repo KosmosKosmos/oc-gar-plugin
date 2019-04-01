@@ -18,7 +18,7 @@ columns:
         label: kosmoskosmos.gar::lang.role_infos.zip
     city:
         label: kosmoskosmos.gar::lang.role_infos.city
-    confirm_by_role:
+    is_confirmed_by_role:
         label: kosmoskosmos.gar::lang.role_infos.confirm_by_role
         type: switch
         default: true
