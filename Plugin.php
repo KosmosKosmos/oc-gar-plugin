@@ -17,7 +17,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
-    public $require = ['Renatio.DynamicPDF'];
+    public $require = ['Renatio.DynamicPDF', 'Rainlab.Translate'];
     /**
      * Returns information about this plugin.
      *
