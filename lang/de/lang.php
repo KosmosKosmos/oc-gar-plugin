@@ -1,6 +1,7 @@
 <?php
     return [
         'gar' => 'GAR',
+        'description' => 'Backend users may be forced to accept GAR or other documents on first login.',
         'settings' => [
             'gar_settings' => 'GAR Settings',
             'comment' => 'GAR contents and settings',

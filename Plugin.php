@@ -17,6 +17,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    public $require = ['Renatio.DynamicPDF'];
     /**
      * Returns information about this plugin.
      *
@@ -25,8 +26,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'GAR',
-            'description' => 'No description provided yet...',
+            'name'        => 'kosmoskosmos.gar::lang.gar',
+            'description' => 'kosmoskosmos.gar::lang.description',
             'author'      => 'KosmosKosmos',
             'icon'        => 'icon-certificate'
         ];
