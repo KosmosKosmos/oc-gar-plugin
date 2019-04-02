@@ -59,10 +59,10 @@ body {
 '{{roleInfo.zip}} {{roleInfo.city}}<br>'.PHP_EOL.
 '</p>'.PHP_EOL.PHP_EOL.
 '{{gar| raw}}'.PHP_EOL.PHP_EOL.
-'<p>Dieses Dokument wurde online beim Login auf {{url}} als gelesen und akzeptiert markiert.</p>'.PHP_EOL.
+'<p>This document was marked as read and accepted by login at {{url}}.</p>'.PHP_EOL.
 '<p>IP: {{ip}}<br>'.PHP_EOL.
-'Datum & Uhrzeit: {{date}}<br>'.PHP_EOL.
-'Signiert mit der Name: {{firstname_signed}} {{lastname_signed}}'.PHP_EOL.
+'Date & Time: {{date}}<br>'.PHP_EOL.
+'Signed with the name: {{firstname_signed}} {{lastname_signed}}'.PHP_EOL.
 '</p>';
 
    public function run() {
