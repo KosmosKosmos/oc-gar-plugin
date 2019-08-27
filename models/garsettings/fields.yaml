@@ -12,6 +12,11 @@ fields:
         type: codeeditor
         size: huge
         language: html
+    gar_mail_text:
+        label: kosmoskosmos.gar::lang.settings.gar_mail_text
+        type: codeeditor
+        size: huge
+        language: html
     gar_confirm_label:
         label: kosmoskosmos.gar::lang.settings.gar_confirm_label
     gar_confirm_comment:

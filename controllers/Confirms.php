@@ -88,7 +88,7 @@ class Confirms extends Controller
                 ]);
 
                 if (filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
-                    Mail::queue('kosmoskosmos.gar::mail.gar', [], function ($message) use ($user, $filename) {
+                    Mail::queue('kosmoskosmos.gar::mail.gar', ['mail_text' => GARSettings::get('gar_mail_text')], function ($message) use ($user, $filename) {
                         $message->to($user->email);
 
                         if (GARSettings::get('gar_cc_mail') && filter_var(GARSettings::get('gar_cc_mail'), FILTER_VALIDATE_EMAIL)) {

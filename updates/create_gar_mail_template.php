@@ -21,7 +21,7 @@ class CreateGarMailTemplate extends Seeder
                $template->description = 'GAR confirmation E-Mail';
                $template->layout_id = $mailLayout->id;
                $template->subject = 'GAR Confirmation';
-               $template->content_html = "<p>Lorem ipsum</p>";
+               $template->content_html = "{{mail_text | raw}}";
                $template->is_custom = true;
                $template->save();
            }
