@@ -20,7 +20,7 @@ class CreateGarMailTemplate extends Seeder
                $template->code = 'kosmoskosmos.gar::mail.gar';
                $template->description = 'GAR confirmation E-Mail';
                $template->layout_id = $mailLayout->id;
-               $template->subject = 'GAR Confirmation';
+               $template->subject = '{{gar_subject}}';
                $template->content_html = "{{mail_text | raw}}";
                $template->is_custom = true;
                $template->save();

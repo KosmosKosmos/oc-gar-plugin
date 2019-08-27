@@ -7,6 +7,7 @@
              'comment' => 'GAR contents and settings',
              'gar_text' => 'GAR Text',
              'gar_mail_text' => 'GAR Email Text',
+             'gar_mail_subject' => 'GAR Email Subject',
              'gar_confirm_label' => 'GAR Confirm Label',
              'gar_confirm_comment' => 'GAR Confirm Comment',
              'gar_cc_mail' => 'GAR CC Mail'
