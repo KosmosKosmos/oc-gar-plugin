@@ -81,7 +81,8 @@ body {
                'layout_id' => $layout->id,
                'code' => 'gar-confirm',
                'title' => 'GAR Confirmation',
-               'content_html' => $this->templateHtml
+               'content_html' => $this->templateHtml,
+               'is_custom' => true
            ]);
        }
    }
