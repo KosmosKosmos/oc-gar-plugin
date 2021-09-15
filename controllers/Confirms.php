@@ -1,5 +1,6 @@
 <?php namespace KosmosKosmos\GAR\Controllers;
 
+use Andosto\EventManager\Models\ExportJob;
 use Backend\Facades\Backend;
 use Backend\Facades\BackendAuth;
 use Backend\Widgets\GARExport;
@@ -7,6 +8,7 @@ use BackendMenu;
 use Backend\Classes\Controller;
 use Carbon\Carbon;
 use Chumper\Zipper\Facades\Zipper;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -106,28 +108,19 @@ class Confirms extends Controller
     }
 
     public function onExport() {
-        $data = input();
+        $backendUser = BackendAuth::getUser();
+        $exportJob = ExportJob::create([
+                'created_by' => $backendUser->id
+        ]);
 
-        $filename = 'signed-'.Carbon::today()->format('Y-m-d').'.zip';
-        $password = str_random(6);
+        Artisan::queue('eventmanager:exportgarconfirmations', [
+                'backendUser' => $backendUser->id,
+                'exportJobID' => $exportJob->id,
+                'ids' => input('checked')
+        ]);
 
-        if (array_key_exists('checked', $data)) {
-            $files = Confirm::whereIn('id', $data['checked'])->get()->lists('file');
-            $files = array_map(function ($a) {
-                return storage_path('kosmoskosmos/signed/'.$a);
-                },
-            $files);
-            $files = implode(' ', $files);
-        } else {
-            $files = storage_path('kosmoskosmos/signed/*');
-        }
-
-        exec('zip -P '.$password.' -j '.storage_path('kosmoskosmos/'.$filename).' '.$files);
-        if (!File::exists(storage_path('kosmoskosmos/'.$filename))) {
-            throw new \Exception('Cannot create zip file');
-        }
-
-        return ['file' => $filename, 'password' => $password];
+        Flash::success(trans('andosto.eventmanager::lang.export_jobs.message'));
+        return redirect()->back();
     }
 
     public function download($file) {
