@@ -1,0 +1,8 @@
+{
+    "name": "kosmoskosmos/gar-plugin",
+    "type": "october-plugin",
+    "description": "KosmosKosmos October CMS GAR Plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
