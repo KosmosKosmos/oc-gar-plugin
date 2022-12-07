@@ -23,3 +23,5 @@
 1.0.9:
     - Rename DB fileds in correspondance with October CMS rules
     - rename_confirm_confirm_by_role.php
+1.1.0: 
+    - October 2 and 3 conform version
