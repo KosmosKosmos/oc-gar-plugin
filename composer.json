@@ -1,8 +1,0 @@
-{
-    "name": "kosmoskosmos/gar-plugin",
-    "type": "october-plugin",
-    "description": "GAR Plugin",
-    "require": {
-        "composer/installers": "~1.0"
-    }
-}
