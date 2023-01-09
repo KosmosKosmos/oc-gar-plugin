@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR\Updates;
+<?php namespace KosmosKosmos\GAR2\Updates;
 
 use Illuminate\Support\Facades\File;
 use October\Rain\Database\Updates\Seeder;

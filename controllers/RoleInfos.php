@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR\Controllers;
+<?php namespace KosmosKosmos\GAR2\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;

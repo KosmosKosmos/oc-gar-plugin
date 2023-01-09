@@ -1,7 +1,7 @@
-<?php namespace KosmosKosmos\GAR\Console;
+<?php namespace KosmosKosmos\GAR2\Console;
 
 use Illuminate\Console\Command;
-use KosmosKosmos\GAR\Models\Confirm;
+use KosmosKosmos\GAR2\Models\Confirm;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 

@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR\Controllers;
+<?php namespace KosmosKosmos\GAR2\Controllers;
 
 use Andosto\EventManager\Models\ExportJob;
 use Backend\Facades\Backend;
@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\URL;
-use KosmosKosmos\GAR\Models\Confirm;
-use KosmosKosmos\GAR\Models\GARSettings;
-use KosmosKosmos\GAR\Models\RoleInfo;
+use KosmosKosmos\GAR2\Models\Confirm;
+use KosmosKosmos\GAR2\Models\GARSettings;
+use KosmosKosmos\GAR2\Models\RoleInfo;
 use October\Rain\Support\Facades\Flash;
 use Renatio\DynamicPDF\Classes\PDF;
 

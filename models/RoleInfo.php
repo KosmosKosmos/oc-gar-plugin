@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR\Models;
+<?php namespace KosmosKosmos\GAR2\Models;
 
 use Model;
 

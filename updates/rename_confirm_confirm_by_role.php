@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR\Updates;
+<?php namespace KosmosKosmos\GAR2\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;

@@ -1,4 +1,4 @@
-<?php namespace KosmosKosmos\GAR;
+<?php namespace KosmosKosmos\GAR2;
 
 use Backend;
 use Backend\Classes\Controller;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
-use KosmosKosmos\GAR\Models\RoleInfo;
+use KosmosKosmos\GAR2\Models\RoleInfo;
 use System\Classes\PluginBase;
 
 /**
