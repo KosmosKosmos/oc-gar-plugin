@@ -8,7 +8,7 @@ use October\Rain\Database\Updates\Migration;
  * Renames Database columns in correspondance with October CMS Marketplace specifications.
  *
  * Class RenameConfirmConfirmByRole
- * @package KosmosKosmos\GAR\Updates
+ * @package KosmosKosmos\GAR2\Updates
  */
 class RenameConfirmConfirmByRole extends Migration
 {

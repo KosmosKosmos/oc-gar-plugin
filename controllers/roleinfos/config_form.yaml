@@ -6,25 +6,25 @@
 name: Role Info
 
 # Model Form Field configuration
-form: $/kosmoskosmos/gar/models/roleinfo/fields.yaml
+form: $/kosmoskosmos/gar2/models/roleinfo/fields.yaml
 
 # Model Class name
-modelClass: KosmosKosmos\GAR\Models\RoleInfo
+modelClass: KosmosKosmos\GAR2\Models\RoleInfo
 
 # Default redirect location
-defaultRedirect: kosmoskosmos/gar/roleinfos
+defaultRedirect: kosmoskosmos/gar2/roleinfos
 
 # Create page
 create:
     title: Create Role Info
-    redirect: kosmoskosmos/gar/roleinfos/update/:id
-    redirectClose: kosmoskosmos/gar/roleinfos
+    redirect: kosmoskosmos/gar2/roleinfos/update/:id
+    redirectClose: kosmoskosmos/gar2/roleinfos
 
 # Update page
 update:
     title: Edit Role Info
-    redirect: kosmoskosmos/gar/roleinfos
-    redirectClose: kosmoskosmos/gar/roleinfos
+    redirect: kosmoskosmos/gar2/roleinfos
+    redirectClose: kosmoskosmos/gar2/roleinfos
 
 # Preview page
 preview:

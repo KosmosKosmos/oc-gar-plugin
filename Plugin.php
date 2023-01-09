@@ -40,7 +40,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->registerConsoleCommand('gar.deleteconfirm', 'KosmosKosmos\GAR\Console\DeleteConfirm');
+        $this->registerConsoleCommand('gar.deleteconfirm', 'KosmosKosmos\GAR2\Console\DeleteConfirm');
     }
 
     /**
@@ -52,13 +52,13 @@ class Plugin extends PluginBase
     {
         Backend\Models\User::extend(function ($model) {
             $model->morphOne['gar_confirm'] = [
-                'KosmosKosmos\GAR\Models\Confirm',
+                'KosmosKosmos\GAR2\Models\Confirm',
                 'name' => 'confirmable'
             ];
         });
         Backend\Models\UserRole::extend(function ($model) {
             $model->morphOne['gar_confirm'] = [
-                'KosmosKosmos\GAR\Models\Confirm',
+                'KosmosKosmos\GAR2\Models\Confirm',
                 'name' => 'confirmable'
             ];
         });
@@ -76,7 +76,7 @@ class Plugin extends PluginBase
                 ) {
                     return Request::ajax()
                         ? Response::make(trans('backend::lang.page.access_denied.label'), 403)
-                        : Redirect::guest(Backend::url('kosmoskosmos/gar/confirms/confirm'));
+                        : Redirect::guest(Backend::url('kosmoskosmos/gar2/confirms/confirm'));
 
                 }
             }
@@ -122,7 +122,7 @@ class Plugin extends PluginBase
         return [
             'gar' => [
                 'label'       => 'kosmoskosmos.gar::lang.gar',
-                'url'         => Backend::url('kosmoskosmos/gar/roleinfos'),
+                'url'         => Backend::url('kosmoskosmos/gar2/roleinfos'),
                 'icon'        => 'icon-certificate',
                 'permissions' => ['kosmoskosmos.gar.manage_gar'],
                 'order'       => 500,
@@ -130,13 +130,13 @@ class Plugin extends PluginBase
                     'role_infos' => [
                         'label' => 'kosmoskosmos.gar::lang.role_infos.role_infos',
                         'icon' => 'icon-info',
-                        'url' => Backend::url('kosmoskosmos/gar/roleinfos'),
+                        'url' => Backend::url('kosmoskosmos/gar2/roleinfos'),
                         'permissions' => ['kosmoskosmos.gar.manage_gar'],
                     ],
                     'confirms' => [
                         'label' => 'kosmoskosmos.gar::lang.confirms.confirms',
                         'icon' => 'icon-check',
-                        'url' => Backend::url('kosmoskosmos/gar/confirms'),
+                        'url' => Backend::url('kosmoskosmos/gar2/confirms'),
                         'permissions' => ['kosmoskosmos.gar.manage_gar'],
                     ],
                 ]
@@ -152,7 +152,7 @@ class Plugin extends PluginBase
                 'description' => 'kosmoskosmos.gar::lang.settings.comment',
                 'category' => 'GAR',
                 'icon' => 'icon-certificate',
-                'class' => 'KosmosKosmos\GAR\Models\GARSettings',
+                'class' => 'KosmosKosmos\GAR2\Models\GARSettings',
                 'order' => 500,
                 'keywords' => 'gar confirmation avv bestätigung bestaetigung',
                 'permissions' => ['kosmoskosmos.gar.manage_gar']

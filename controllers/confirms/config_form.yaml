@@ -6,25 +6,25 @@
 name: Confirm
 
 # Model Form Field configuration
-form: $/kosmoskosmos/gar/models/confirm/fields.yaml
+form: $/kosmoskosmos/gar2/models/confirm/fields.yaml
 
 # Model Class name
-modelClass: KosmosKosmos\GAR\Models\Confirm
+modelClass: KosmosKosmos\GAR2\Models\Confirm
 
 # Default redirect location
-defaultRedirect: kosmoskosmos/gar/confirms
+defaultRedirect: kosmoskosmos/gar2/confirms
 
 # Create page
 create:
     title: Create Confirm
-    redirect: kosmoskosmos/gar/confirms/update/:id
-    redirectClose: kosmoskosmos/gar/confirms
+    redirect: kosmoskosmos/gar2/confirms/update/:id
+    redirectClose: kosmoskosmos/gar2/confirms
 
 # Update page
 update:
     title: Edit Confirm
-    redirect: kosmoskosmos/gar/confirms
-    redirectClose: kosmoskosmos/gar/confirms
+    redirect: kosmoskosmos/gar2/confirms
+    redirectClose: kosmoskosmos/gar2/confirms
 
 # Preview page
 preview:

@@ -9,7 +9,7 @@ columns:
         clickable: false
     confirmable:
         type: partial
-        path: ~/plugins/kosmoskosmos/gar/models/confirm/_confirmable.htm
+        path: ~/plugins/kosmoskosmos/gar2/models/confirm/_confirmable.htm
         label: kosmoskosmos.gar::lang.confirms.confirmable
         clickable: false
     created_at:

@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/kosmoskosmos/gar/models/roleinfo/columns.yaml
+list: $/kosmoskosmos/gar2/models/roleinfo/columns.yaml
 
 # Model Class name
-modelClass: KosmosKosmos\GAR\Models\RoleInfo
+modelClass: KosmosKosmos\GAR2\Models\RoleInfo
 
 # List Title
 title: Manage Role Infos
 
 # Link URL for each record
-recordUrl: kosmoskosmos/gar/roleinfos/update/:id
+recordUrl: kosmoskosmos/gar2/roleinfos/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

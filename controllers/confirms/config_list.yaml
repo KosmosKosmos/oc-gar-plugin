@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/kosmoskosmos/gar/models/confirm/columns.yaml
+list: $/kosmoskosmos/gar2/models/confirm/columns.yaml
 
 # Model Class name
-modelClass: KosmosKosmos\GAR\Models\Confirm
+modelClass: KosmosKosmos\GAR2\Models\Confirm
 
 # List Title
 title: Manage Confirms
 
 # Link URL for each record
-recordUrl: kosmoskosmos/gar/confirms/update/:id
+recordUrl: kosmoskosmos/gar2/confirms/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
