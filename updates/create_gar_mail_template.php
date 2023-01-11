@@ -14,10 +14,10 @@ class CreateGarMailTemplate extends Seeder
    public function run() {
        $mailLayout = MailLayout::where('code', '=', 'default')->first();
        if ($mailLayout) {
-           $template = MailTemplate::where('code', '=', 'kosmoskosmos.gar::mail.gar')->first();
+           $template = MailTemplate::where('code', '=', 'kosmoskosmos.gar2::mail.gar')->first();
            if (!$template) {
                $template = new MailTemplate();
-               $template->code = 'kosmoskosmos.gar::mail.gar';
+               $template->code = 'kosmoskosmos.gar2::mail.gar';
                $template->description = 'GAR confirmation E-Mail';
                $template->layout_id = $mailLayout->id;
                $template->subject = '{{gar_subject}}';

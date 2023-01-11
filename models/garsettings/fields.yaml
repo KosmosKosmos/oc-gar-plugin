@@ -8,20 +8,20 @@ fields:
         disabled: true
         hidden: true
     gar_text:
-        label: kosmoskosmos.gar::lang.settings.gar_text
+        label: kosmoskosmos.gar2::lang.settings.gar_text
         type: codeeditor
         size: huge
         language: html
     gar_mail_subject:
-        label: kosmoskosmos.gar::lang.settings.gar_mail_subject
+        label: kosmoskosmos.gar2::lang.settings.gar_mail_subject
     gar_mail_text:
-        label: kosmoskosmos.gar::lang.settings.gar_mail_text
+        label: kosmoskosmos.gar2::lang.settings.gar_mail_text
         type: codeeditor
         size: huge
         language: html
     gar_confirm_label:
-        label: kosmoskosmos.gar::lang.settings.gar_confirm_label
+        label: kosmoskosmos.gar2::lang.settings.gar_confirm_label
     gar_confirm_comment:
-        label: kosmoskosmos.gar::lang.settings.gar_confirm_comment
+        label: kosmoskosmos.gar2::lang.settings.gar_confirm_comment
     gar_cc_mail:
-        label: kosmoskosmos.gar::lang.settings.gar_cc_mail
+        label: kosmoskosmos.gar2::lang.settings.gar_cc_mail

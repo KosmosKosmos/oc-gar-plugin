@@ -26,8 +26,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'kosmoskosmos.gar::lang.gar',
-            'description' => 'kosmoskosmos.gar::lang.description',
+            'name'        => 'kosmoskosmos.gar2::lang.gar',
+            'description' => 'kosmoskosmos.gar2::lang.description',
             'author'      => 'KosmosKosmos',
             'icon'        => 'icon-certificate'
         ];
@@ -121,20 +121,20 @@ class Plugin extends PluginBase
     {
         return [
             'gar' => [
-                'label'       => 'kosmoskosmos.gar::lang.gar',
+                'label'       => 'kosmoskosmos.gar2::lang.gar',
                 'url'         => Backend::url('kosmoskosmos/gar2/roleinfos'),
                 'icon'        => 'icon-certificate',
                 'permissions' => ['kosmoskosmos.gar.manage_gar'],
                 'order'       => 500,
                 'sideMenu'    => [
                     'role_infos' => [
-                        'label' => 'kosmoskosmos.gar::lang.role_infos.role_infos',
+                        'label' => 'kosmoskosmos.gar2::lang.role_infos.role_infos',
                         'icon' => 'icon-info',
                         'url' => Backend::url('kosmoskosmos/gar2/roleinfos'),
                         'permissions' => ['kosmoskosmos.gar.manage_gar'],
                     ],
                     'confirms' => [
-                        'label' => 'kosmoskosmos.gar::lang.confirms.confirms',
+                        'label' => 'kosmoskosmos.gar2::lang.confirms.confirms',
                         'icon' => 'icon-check',
                         'url' => Backend::url('kosmoskosmos/gar2/confirms'),
                         'permissions' => ['kosmoskosmos.gar.manage_gar'],
@@ -148,8 +148,8 @@ class Plugin extends PluginBase
     public function registerSettings() {
         return [
             'gar_settings' => [
-                'label' => 'kosmoskosmos.gar::lang.settings.gar_settings',
-                'description' => 'kosmoskosmos.gar::lang.settings.comment',
+                'label' => 'kosmoskosmos.gar2::lang.settings.gar_settings',
+                'description' => 'kosmoskosmos.gar2::lang.settings.comment',
                 'category' => 'GAR',
                 'icon' => 'icon-certificate',
                 'class' => 'KosmosKosmos\GAR2\Models\GARSettings',
